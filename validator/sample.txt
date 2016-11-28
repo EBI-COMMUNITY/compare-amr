@@ -1,0 +1,3 @@
+biosample_id	species	antibiotic_name	ast_standard	breakpoint_version	laboratory_typing_method	measurement	measurement_units	measurement_sign	resistance_phenotype	platform
+SAMEA3113869	Pseudomonas aeruginosa	tobramycin	EUCAST	2015	Microbroth dilution	0.25-128	mg/L	=	susceptible	Vitek
+SAMEA3113869	Pseudomonas aeruginosa	cefepemine	EUCAST	2016	Microbroth dilution	0.5-64	mg/L	=	susceptible	Vitek
