@@ -1,3 +1,5 @@
+import requests
+
 class antibiogram:
     
     global antibiotic_file
@@ -23,7 +25,12 @@ class antibiogram:
         return biosample_id
         
     def val_species(self,species):
-        return species
+        sp=species.replace (" ", "%20")
+        url="http://www.ebi.ac.uk/ena/data/taxonomy/v1/taxon/any-name/%s"%sp
+        resp = requests.get(url)
+        if resp.status_code != 200:
+            print "ERROR: species '%s' does not exist in taxonomy database."%species
+    
     
     def val_antibiotic_name(self,antibiotic_name,antibiotic_file):
         with open(antibiotic_file) as f:
