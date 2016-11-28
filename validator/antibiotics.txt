@@ -1,0 +1,325 @@
+G418
+GE2270A
+GE37468
+Imipenem-EDTA-PA
+L-681,217
+SB22484
+UK-69,753
+acridine dye
+acriflavin
+actinomycin
+actinomycin D
+amikacin
+amoxicillin
+amoxicillin-clavulanic acid
+amoxicillin-clavulanic acid
+ampicillin
+ampicillin-sulbactam
+amythiamicin A
+antibiotic A40926
+antibiotic A47934
+apramycin
+arbekacin
+arsphenamine
+arylomycin
+astromicin
+aurodox
+avoparcin
+azamulin
+azdimycin
+azidamfenicol
+azithromycin
+azlocillin
+aztreonam
+bacitracin
+bacitracin A
+bacitracin B
+bacitracin F
+balhimycin
+benzylpenicillin
+bicyclomycin
+bleomycin
+bleomycin A2
+bleomycin B2
+bleomycinic acid
+brodimoprim
+butirosin
+capreomycin
+carbenicillin
+carbomycin
+cefaclor
+cefadroxil
+cefalexin
+cefalotin
+cefamandole
+cefazolin
+cefdinir
+cefditoren
+cefepime
+cefetamet
+cefixime
+cefmetazole
+cefonicid
+cefoperazone
+cefotaxime
+cefotaxime-clavulanic acid
+cefotetan
+cefotiam
+cefoxitin
+cefpodoxime
+cefpodoxime-proxetil
+cefprozil
+ceftaroline
+ceftazidime
+ceftazidime-clavulanic acid
+ceftibuten
+ceftiofur
+ceftizoxime
+ceftobiprole
+ceftriaxone
+cefuroxime
+celesticetin
+cephalexin
+cephalothin
+cephamycin
+cephapirin
+cephem
+cephradine
+chalcomycin
+chloramphenicol
+chloroeremomycin
+chlortetracycline
+cinoxacin
+ciprofloxacin
+clarithromycin
+clavulanic acid
+clinafloxacin
+clindamycin
+clofazimine
+clorobiocin
+cloxacillin
+colistin
+colistin A
+colistin B
+coumermycin A1
+cyclic thiazolyl peptide elfamycin
+cycloserine
+dalbavancin
+dalfopristin
+danofloxacin
+daptomycin
+defensin
+demeclocycline
+diaminopyrimidine
+dibekacin
+dicloxacillin
+dihydromocimycin
+dirithromycin
+doripenem
+doxycycline
+edeine
+edeine A
+edeine B
+edeine D
+edeine F
+efrotomycin
+elfamycin
+enacyloxin IIa
+enoxacin
+enrofloxacin
+ertapenem
+erythromycin
+ethambutol
+ethionamide
+factumycin
+fidaxomicin
+fleroxacin
+flomoxef
+florfenicol
+flucloxacillin
+fluoroquinolone
+fosfomycin
+fosmidomycin
+furazolidone
+fusidic acid
+ganefromycin
+gatifloxacin
+gentamicin
+gentamicin B
+gentamicin C
+glycylcycline
+gramicidin
+gramicidin A
+gramicidin B
+gramicidin C
+gramicidin D
+gramicidin S
+grepafloxacin
+griseoviridin
+heneicomycin
+hygromycin B
+iclaprim
+imipenem
+isepamicin
+isoniazid
+isopenicillin N
+josamycin
+kanamycin
+kanamycin A
+kasugamicin
+kirromycin
+kirrothricin
+kitasamycin
+levofloxacin
+lincomycin
+lincosamide
+linezolid
+lipopeptide antibiotic
+lividomycin
+lividomycin A
+lividomycin B
+lomefloxacin
+loracarbef
+madumycin II
+mafenide
+magainin
+mecillinam
+megalomycin
+meropenem
+methicillin
+methicillin
+methymycin
+metronidazole
+mezlocillin
+midecamycin
+minocycline
+moenomycin
+moenomycin A1
+moxalactam
+moxifloxacin
+mupirocin
+mycinamicin
+nafcillin
+nalidixic acid
+narbomycin
+neomycin
+netilmicin
+nicotinamide
+niddamycin
+nitrofurantoin
+norfloxacin
+novobiocin
+ofloxacin
+oleandomycin
+oritavancin
+ostreogrycin B3
+oxacillin
+oxytetracycline
+para-aminosalicylic acid
+paromomycin
+patricin A
+patricin B
+pefloxacin
+penam
+penicillin
+penicillin N
+phenelfamycin A
+phenelfamycin B
+phenelfamycin C
+phenelfamycin D
+phenelfamycin E
+phenelfamycin F
+phenelfamycin G
+phenelfamycin H
+phenicol
+phenoxymethylpenicillin
+pikromycin
+piperacillin
+piperacillin-sulbactam
+piperacillin-tazobactam
+pleuromutilin
+polymyxin
+polymyxin B
+polymyxin B1
+polymyxin B2
+polymyxin B3
+polymyxin B4
+pristinamycin IA
+pristinamycin IB
+pristinamycin IIA
+propicillin
+prothionamide
+pulvomycin
+puromycin
+pyrazinamide
+quinupristin
+quinupristin-dalfopristin
+retapamulin
+ribostamycin
+rifabutin
+rifampin
+rifampin
+rifampin
+rifamycin
+rifapentine
+rifaximin
+ristocetin
+rosaramicin
+roxithromycin
+sisomicin
+sparfloxacin
+spectinomycin
+spiramycin
+streptogramin
+streptogramin A antibiotic
+streptogramin B antibiotic
+streptomycin
+streptothricin
+sulbactam
+sulfacetamide
+sulfadiazine
+sulfadimethoxine
+sulfadimidine
+sulfadoxine
+sulfamethizole
+sulfamethoxazole
+sulfasalazine
+sulfisoxazole
+sulfonamide
+synercid
+tazobactam
+teicoplanin
+telavancin
+telithromycin
+tetracycline
+tetroxoprim
+thiamphenicol
+thiostrepton
+tiamulin
+ticarcillin
+ticarcillin-clavulanic acid
+tigecycline
+tilmicosin
+timentin
+tinidazole
+tobramycin
+triclosan
+trimethoprim
+trimethoprim-sulfamethoxazole
+trimethoprim-sulfamethoxazole
+trimethoprim-sulfamethoxazole
+trovafloxacin
+tuberactinomycin
+tulathromycin
+tunicamycin
+tylosin
+tyrothricin
+unphenelfamycin
+valnemulin
+vancomycin
+verdamicin
+vernamycin B-gamma
+vernamycin C
+vertilimicin
+viomycin
+virginiamycin S2
