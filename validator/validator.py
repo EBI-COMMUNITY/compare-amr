@@ -10,6 +10,7 @@ import sys
 #TODO: check to see if all the species are the same DONE
 #TODO: accept  the range to the measurment 
 #TODO: let everybody know about the removal of #
+#TODO: ignore the empty lines
 
 def validate_header(header_line):
 	values =header_line.strip().lower().split("\t")
@@ -19,7 +20,7 @@ def validate_header(header_line):
 	if header_len <10:
 		print "ERORR: The header of the file (line number 0) has less number of column than the minimum accepted column (10).\nIt is possible that your file is not a tab delimited file (tsv)"
 		exit=0
-		
+	
 	if "biosample_id" not in values:
 		print "ERROR: biosample_id column is missing."
 		exit=0
@@ -86,6 +87,8 @@ def get_antibiogram_data(tsv_file):
 
 	antibiograms=list()
 	
+	
+	
 	i=1
 	for line in lines:
 		columns = line.strip().split("\t")
@@ -112,6 +115,7 @@ def get_antibiogram_data(tsv_file):
 				measurement_sign=columns[measurement_sign_index]
 				resistance_phenotype=columns[resistance_phenotype_index]
 				platform=columns[platform_index]
+					
 				
 
 				antibio=antibiogram(biosample_id,species,antibiotic_name,ast_standard,breakpoint_version,
@@ -120,15 +124,17 @@ def get_antibiogram_data(tsv_file):
 
 				antibiograms.append(antibio)
 		i += 1
+		
 	if len(biosample_id_set) > 1:
 		print "ERROR: there are multiple biosample_id in this file. biosample_id shall be unique. current ones are:\n %s"%list(biosample_id_set)
 	if len(species_set) > 1:
 		print "ERROR: there are multiple species in this file. Species shall be unique. Current ones are:\n %s"%list(species_set)
-
+	
 	return antibiograms
 
 
 
 if __name__ == '__main__':
+	
 	antibiograms=get_antibiogram_data(sys.argv[1])
 	
