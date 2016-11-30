@@ -50,7 +50,7 @@ class antibiogram:
 				with open(antibiotic_file) as f:
 						 antibiotics = f.read().upper().splitlines()
 				if antibiotic_name.upper() not in antibiotics:
-					 print "ERROR: %s is not a valid antibiotic_name name in line number %s."%(antibiotic_name,line_number)
+					 print "ERROR: '%s' is not a valid antibiotic_name name in line number %s."%(antibiotic_name,line_number)
 				return antibiotic_name
 				
 		def val_ast_standard(self,ast_standard,line_number):
@@ -133,7 +133,7 @@ class antibiogram:
 		def val_resistance_phenotype(self,resistance_phenotype,line_number):
 				accepted_resistance_phenotype=['intermediate','susceptible','resistant','non-susceptible','not-defined']
 				if resistance_phenotype not in accepted_resistance_phenotype:
-						print "ERROR: %s is not a valid resistance phenotype. Valid ones are 'intermediate','susceptible','resistant','non-susceptible', and 'not-defined' in line number %s"%(resistance_phenotype,line_number)
+						print "ERROR: '%s' is not a valid resistance phenotype. Valid ones are 'intermediate','susceptible','resistant','non-susceptible', and 'not-defined' in line number %s"%(resistance_phenotype,line_number)
 				return resistance_phenotype
 		
 		def val_platform(self,platform,line_number):
