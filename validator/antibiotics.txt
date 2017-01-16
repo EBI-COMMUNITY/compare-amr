@@ -12,7 +12,6 @@ actinomycin D
 amikacin
 amoxicillin
 amoxicillin-clavulanic acid
-amoxicillin-clavulanic acid
 ampicillin
 ampicillin-sulbactam
 amythiamicin A
