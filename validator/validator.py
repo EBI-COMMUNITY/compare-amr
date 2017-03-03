@@ -1,16 +1,6 @@
 from amr import antibiogram
 import sys
 
-#TODO: check to see if a file tab file DONE
-#TODO: check to see all the headers column are available DONE
-#TODO: check the taxonomy/species  DONE
-#TODO: add ignore case to all the string matches DONE
-#TODO: check a 10 column file to works Not needed
-#TODO: check to see all the sample_ids are the same DONE
-#TODO: check to see if all the species are the same DONE
-#TODO: accept  the range to the measurment 
-#TODO: let everybody know about the removal of #
-#TODO: ignore the empty lines
 
 def validate_header(header_line):
 	values =header_line.strip().lower().split("\t")
