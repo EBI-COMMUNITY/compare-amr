@@ -108,6 +108,7 @@ def get_args():
 	parser.add_argument('-p', '--password', type=str, help='Please provide a password if you are using submit mode.', required=False)
        	parser.add_argument('-c', '--center', type=str, help='Please provide the centre name for your Webin account if you are using submit mode.', required=False)
        	parser.add_argument('-s', '--study', type=str, help='Please provide the study id (looks like PRJEBXXX) to add the antibiograms to if you are using submit mode.', required=False)
+       	parser.add_argument('-t', '--test', action='store_true', help='If you are using the submit flag, this option will send the submission to the test server. To submit to the production server leave this option out', required=False)
 
 
 	args=parser.parse_args()
@@ -134,4 +135,4 @@ if __name__ == '__main__':
 		build_dir(antibiograms)
 		all_sub=make_xml(antibiograms) #all_sub[0] = submission xml, all_sub[1] = analysis xml
 		ftper=ftper(antibiograms.files_created,args.user_name,args.password)
-		crl=amrcurl(all_sub[0],all_sub[1],args.user_name,args.password)
+		crl=amrcurl(all_sub[0],all_sub[1],args.user_name,args.password,args.test)

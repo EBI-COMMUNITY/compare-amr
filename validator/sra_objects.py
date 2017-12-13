@@ -85,9 +85,8 @@ class submission:
 		actionsElt=etree.SubElement(submissionElt, 'ACTIONS')
 		actionElt=etree.SubElement(actionsElt,'ACTION')
 		actionSub=etree.SubElement(actionElt,self.action,source=self.source_xml,schema=self.schema)
-		actionElt2=etree.SubElement(actionsElt,'ACTION')
-		actionRollback=etree.SubElement(actionElt2,'ROLLBACK')
-#		print lxml.etree.tostring(submission_xml, pretty_print=True,xml_declaration = True, encoding='UTF-8')
+#		actionElt2=etree.SubElement(actionsElt,'ACTION')
+#		actionRollback=etree.SubElement(actionElt2,'ROLLBACK')
 		submission_xml.write(self.submission_xml_file,pretty_print=True,xml_declaration = True, encoding='UTF-8')
 
 

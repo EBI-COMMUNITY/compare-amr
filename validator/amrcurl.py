@@ -4,11 +4,14 @@ import sys
 
 class amrcurl:
 
-    def __init__(self,submission_xml,analysis_xml,account_id,password):
+    def __init__(self,submission_xml,analysis_xml,account_id,password,test):
 
         self.submission_xml=self.check_file(submission_xml)
         self.analysis_xml=self.check_file(analysis_xml)
-        self.url='https://www-test.ebi.ac.uk/ena/submit/drop-box/submit/?auth=ENA%20' + account_id + '%20' + password 
+	if test:
+            self.url='https://www-test.ebi.ac.uk/ena/submit/drop-box/submit/?auth=ENA%20' + account_id + '%20' + password 
+	else:
+            self.url='https://www.ebi.ac.uk/ena/submit/drop-box/submit/?auth=ENA%20' + account_id + '%20' + password 
         self.post()
 
 
