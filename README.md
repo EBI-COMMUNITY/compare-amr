@@ -4,13 +4,13 @@
 compare-amr directory contains (among other files)
 
 amrcurl.py <br />
-amr.py
-antibiotics.txt
-ftper.py
-samp.txt
-sra_objects.py
-validator.py
-val.py
+amr.py <br />
+antibiotics.txt <br />
+ftper.py <br />
+samp.txt <br />
+sra_objects.py <br />
+validator.py <br />
+val.py <br />
 
 
 The package is accessed from main file 'validator.py'
