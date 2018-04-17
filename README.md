@@ -50,7 +50,7 @@ The source antibiogram file is split by source sample (column 1). The example fi
 
 example output on success:
 
-{code}
+```
 ['biosample_id', 'species', 'antibiotic_name', 'ast_standard', 'breakpoint_version', 'laboratory_typing_method', 'measurement', 'measurement_units', 'measurement_sign', 'resistance_phenotype', 'platform']
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="receipt.xsl"?>
@@ -69,7 +69,7 @@ example output on success:
      </MESSAGES>
      <ACTIONS>ADD</ACTIONS>
 </RECEIPT>
-{code}
+```
 
 
 Finally:
@@ -77,9 +77,11 @@ Example of trying to submit an antibiogram file with an error in it:
 
 python ../compare-amr/validator.py -f with_error.txt -m submit -u Webin-XXXX -PASS -s PRJEBXXXX -c CENT -t
 
+```
 ['biosample_id', 'species', 'antibiotic_name', 'ast_standard', 'breakpoint_version', 'laboratory_typing_method', 'measurement', 'measurement_units', 'measurement_sign', 'resistance_phenotype', 'platform']
 ERROR: 'amjicillin' is not a valid antibiotic_name name in line number 2.
 1 rows have an error. removing temporary files and exiting ...
+```
 
 In this case, attempt to correct the error and try again. The 'validate' option is recommended when testing for the first time to avoid uneccesary file creation and file upload in case there is an error in the original antibiogram file.
 
