@@ -12,7 +12,6 @@ from ftper import ftper
 from amrcurl import amrcurl
 
 
-<<<<<<< HEAD
 
 def build_dir(rows):
 
@@ -30,7 +29,7 @@ def build_dir(rows):
 				print "trouble removing %s. Exiting without continuing."%expectedfname
 				print e
 				sys.exit(0)
-=======
+
 def validate_header(header_line):
 	values =header_line.strip().lower().split("\t")
 	header_len=len(values)
@@ -73,7 +72,6 @@ def validate_header(header_line):
 		
 	if exit==0:
 		print "Validator has been exited because of above error(s) and has't been proceeded to rest of validation"
->>>>>>> 090b03ef76cfeae2258bcb9525966f5de99de159
 		sys.exit(0)
 				
 	else:
