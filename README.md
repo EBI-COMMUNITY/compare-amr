@@ -50,6 +50,7 @@ The source antibiogram file is split by source sample (column 1). The example fi
 
 example output on success:
 
+{code}
 ['biosample_id', 'species', 'antibiotic_name', 'ast_standard', 'breakpoint_version', 'laboratory_typing_method', 'measurement', 'measurement_units', 'measurement_sign', 'resistance_phenotype', 'platform']
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="receipt.xsl"?>
@@ -68,6 +69,7 @@ example output on success:
      </MESSAGES>
      <ACTIONS>ADD</ACTIONS>
 </RECEIPT>
+{code}
 
 
 Finally:
