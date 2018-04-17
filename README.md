@@ -1,7 +1,8 @@
 # AMR
 
+
 compare-amr directory contains (among other files)
-===
+
 amrcurl.py
 amr.py
 antibiotics.txt
@@ -10,7 +11,7 @@ samp.txt
 sra_objects.py
 validator.py
 val.py
-===
+
 
 The package is accessed from main file 'validator.py'
 You can run the below to see available options
