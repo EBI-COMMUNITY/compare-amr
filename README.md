@@ -13,9 +13,9 @@ validator.py <br />
 val.py <br />
 
 
-The package is accessed from main file 'validator.py'
-You can run the below to see available options
-python validator.py --help
+The package is accessed from main file 'validator.py' <br />
+You can run the below to see available options <br />
+python validator.py --help <br />
 
 
 The tool will add directories and files into the working directory so it is reccommended to work outside of compare-amr directory but you must copy over antibiotics.txt to your working directory to have a local list of accepted antibiotics terms.
