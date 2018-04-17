@@ -26,12 +26,12 @@ Step 1: using option 'validate' (-m validate) on the provided minimum_samp.txt f
 
 python ../compare-amr/validator.py -f minimum_samp.txt -m validate -u Webin-XXX -p PASS -s PRJEBXXXX -c CENT -t
 
-If all is well, the headers in the antibiogram file are printed and no other messages will appear if there are no errors detected. 
-Webin-XXX must be replaced with your account id
-PASS must be replaced with the password for your account.
-PRJEBXXXX must be replaced with a valid project id (to which you are adding the antibiogram file)
-CENT must be replaced by a valid centre name that is associated with your Webin account
-Use the correct path to call validator.py if it is in a different directory to the working directory
+If all is well, the headers in the antibiogram file are printed and no other messages will appear if there are no errors detected. <br />
+Webin-XXX must be replaced with your account id <br />
+PASS must be replaced with the password for your account. <br />
+PRJEBXXXX must be replaced with a valid project id (to which you are adding the antibiogram file) <br />
+CENT must be replaced by a valid centre name that is associated with your Webin account <br />
+Use the correct path to call validator.py if it is in a different directory to the working directory <br />
 
 The -t flag means "test" in the command above. It does nothing at this stage but if the 'validate' option was turned off and the submission went through, it would go to the test server instead of the production server. The test server behaves like the production server and you will get back accessions if the submission is good. But the test server is wiped and replaced every day so the accessions will not persist and are not real! 
 
