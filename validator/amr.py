@@ -12,8 +12,8 @@ class antibiogram:
 		
 		
 		laboratory_typing_methods=['BROTH DILUTION','MICROBROTH DILUTION','AGAR DILUTION','DISC-DIFFUSION','NEO-SENSITABS','ETEST']
-		dilution_methods=['BROTH DILUTION','MICROBROTH DILUTION','AGAR DILUTION']
-		diffusion_methods=['DISC-DIFFUSION','NEO-SENSITABS','ETEST']
+		dilution_methods=['BROTH DILUTION','MICROBROTH DILUTION','AGAR DILUTION','ETEST']
+		diffusion_methods=['DISC-DIFFUSION','NEO-SENSITABS']
 		antibiotic_file="antibiotics.txt"
 
 		def __init__(self,biosample_id,species,antibiotic_name,ast_standard,breakpoint_version,laboratory_typing_method,measurement,measurement_units,measurement_sign,resistance_phenotype,platform,line_number):
