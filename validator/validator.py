@@ -13,28 +13,6 @@ from ftper import ftper
 from amrcurl import amrcurl
 
 
-
-def build_dir(rows):
-	new_dirs = []
-	if rows.error_detect:
-		print "%s rows have an error. removing temporary files and exiting ..."%str(rows.error_detect) #temporary files are from val.get_antibiogram_data()
-#		for f in glob.glob("*"+month):
-#			os.remove(f)
-
-	for prefix in rows.files_created:
-		expectedfname = prefix + ".txt"
-		directoryname = prefix
-		try:
-			os.remove(expectedfname)
-			shutil.rmtree(directoryname)
-			os.makedirs(directoryname)
-
-		except OSError as e:
-			print "trouble removing %s. Exiting without continuing."%expectedfname
-			print e
-			sys.exit(0)
-
-
 def build_dir (rows):
 	if rows.error_detect:
 		print
@@ -216,7 +194,7 @@ if __name__ == '__main__':
 	args = get_args()
 	antibiograms=val(args)
 	print '*' * 100
-	print "processed\n %s" % antibiograms.files_created
+	print "processed...\n %s" % antibiograms.files_created
 	if args.mode == "submit":
 		build_dir(antibiograms)
 		all_sub=make_xml(antibiograms) #all_sub[0] = submission xml, all_sub[1] = analysis xml
