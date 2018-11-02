@@ -18,11 +18,13 @@ class ftper:
             xml_name =  prefix + '/' + prefix + '.xml'
             xml_sub = prefix + '/submission_' + prefix + '.xml'
             if prefix in self.contents:
+                #print self.contents
                 print "making remote directory '%s' but there is already a remote directory (or file) with this name"%prefix
                 print "exiting program"
                 self.quit()
                 sys.exit()
             try:
+                print "Submitting ... %s, %s, %s " % (file_name, xml_name, xml_sub)
                 upload_file = open(file_name,'r')
                 upload_xml = open(xml_name,'r')
                 upload_sub = open(xml_sub,'r')

@@ -1,3 +1,4 @@
+#!/usr/bin/env python2
 from val import val
 from sra_objects import analysis_amr
 from sra_objects import analysis_file
@@ -14,21 +15,58 @@ from amrcurl import amrcurl
 
 
 def build_dir(rows):
-
 	new_dirs = []
 	if rows.error_detect:
 		print "%s rows have an error. removing temporary files and exiting ..."%str(rows.error_detect) #temporary files are from val.get_antibiogram_data()
 #		for f in glob.glob("*"+month):
 #			os.remove(f)
 
+	for prefix in rows.files_created:
+		expectedfname = prefix + ".txt"
+		directoryname = prefix
+		try:
+			os.remove(expectedfname)
+			shutil.rmtree(directoryname)
+			os.makedirs(directoryname)
+
+		except OSError as e:
+			print "trouble removing %s. Exiting without continuing."%expectedfname
+			print e
+			sys.exit(0)
+
+
+def build_dir (rows):
+	if rows.error_detect:
+		print
+		"%s rows have an error. removing temporary files and exiting ..." % str(
+			rows.error_detect)  # temporary files are from val.get_antibiogram_data()
+		sys.exit()
+	else:
 		for prefix in rows.files_created:
+			directoryname = prefix
 			expectedfname = prefix + ".txt"
 			try:
-				os.remove(expectedfname)
+				if os.path.isdir(directoryname):
+					print "Directory %s exits , removed and initialized" % directoryname
+					shutil.rmtree(directoryname)
+					os.makedirs(directoryname)
+				else:
+					os.makedirs(directoryname)
 			except OSError as e:
-				print "trouble removing %s. Exiting without continuing."%expectedfname
+				print "trouble creating a directory called %s. Exiting without continuing" % directoryname
 				print e
 				sys.exit(0)
+			try:
+				shutil.move(expectedfname, directoryname)
+			except IOError as e:
+				print "trouble moving file %s to directory %s. Exiting without continuing" % (expectedfname, directoryname)
+				print e
+				sys.exit(0)
+
+	return
+
+
+
 
 def validate_header(header_line):
 	values =header_line.strip().lower().split("\t")
@@ -106,6 +144,8 @@ def make_xml(rows):
 	all_anal.build_set() 
 	for d in rows.files_created:
 		sample_accession= d.split('_')[0]
+		print "Processing  %s xmls ..." % sample_accession
+
 		analysis_files=list()
 		root_analysis_files=list()
 		filename= d + ".txt"
@@ -170,10 +210,13 @@ def get_args():
 # NOTE: all submissions have ROLLBACK for testing (remove line 88 & 89 in sra_objects.py for actual submission)
 # NOTE: URL in amrcurl is set to TEST server for testing (change line 12 in amrcurl.py for submission to production)
 
+
 if __name__ == '__main__':
 	
 	args = get_args()
 	antibiograms=val(args)
+	print '*' * 100
+	print "processed\n %s" % antibiograms.files_created
 	if args.mode == "submit":
 		build_dir(antibiograms)
 		all_sub=make_xml(antibiograms) #all_sub[0] = submission xml, all_sub[1] = analysis xml

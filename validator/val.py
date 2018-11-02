@@ -66,84 +66,75 @@ class val:
 
 
     def get_antibiogram_data(self):
-
+		tsv_file = self.args.filename
+		with open(tsv_file) as f:
+			lines = f.readlines()
 	
-        tsv_file = self.args.filename
-	with open(tsv_file) as f:
-		lines = f.readlines()
-	
-	header_line = self.validate_header(lines[0])  
-	values = lines[0].strip().lower().split("\t")
-	header_len=len(values)
-	biosample_id_set=set()
- 	species_set=set()
+		header_line = self.validate_header(lines[0])
+		values = lines[0].strip().lower().split("\t")
+		header_len=len(values)
+		biosample_id_set=set()
+		species_set=set()
 
-	antibiograms=list()
+		antibiograms=list()
 
-   
-	biosample_id_index=values.index("biosample_id")
-	species_index=values.index("species")
-	antibiotic_name_index=values.index("antibiotic_name")
-	ast_standard_index=values.index("ast_standard")
-	breakpoint_version_index=values.index("breakpoint_version")
-	laboratory_typing_method_index=values.index("laboratory_typing_method")
-	measurement_index=values.index("measurement")
-	measurement_units_index=values.index("measurement_units")
-	measurement_sign_index=values.index("measurement_sign")
-	resistance_phenotype_index=values.index("resistance_phenotype")
-	platform_index=values.index("platform")
+		biosample_id_index=values.index("biosample_id")
+		species_index=values.index("species")
+		antibiotic_name_index=values.index("antibiotic_name")
+		ast_standard_index=values.index("ast_standard")
+		breakpoint_version_index=values.index("breakpoint_version")
+		laboratory_typing_method_index=values.index("laboratory_typing_method")
+		measurement_index=values.index("measurement")
+		measurement_units_index=values.index("measurement_units")
+		measurement_sign_index=values.index("measurement_sign")
+		resistance_phenotype_index=values.index("resistance_phenotype")
+		platform_index=values.index("platform")
 
-	
-	
-	
-	i=1
-	for line in lines:
-		columns = line.strip().split("\t")
-		if len(columns) <10:
-			print "ERROR: line number %s of the file has less number of column than the minimum accepted column (10).\nIt is possible that your file has missed tabs"%str(i)
-			sys.exit(0)
-		
-		if i>1:
-			if len(columns)!=header_len:
-				print "ERROR: Line number:%s has wrong number of column. It has %s columns while your header has %s columns."%(i,len(columns),header_len)
-				print "The wrong line has these columns:%s"%columns
-				
-			else:
-				biosample_id=columns[biosample_id_index]
-#				biosample_id_set.add(biosample_id)
-				species=columns[species_index]
-				species_set.add(species)
-				antibiotic_name=columns[antibiotic_name_index]
-				ast_standard=columns[ast_standard_index]
-				breakpoint_version=columns[breakpoint_version_index]
-				laboratory_typing_method=columns[laboratory_typing_method_index]
-				measurement=columns[measurement_index]
-				measurement_units=columns[measurement_units_index]
-				measurement_sign=columns[measurement_sign_index]
-				resistance_phenotype=columns[resistance_phenotype_index]
-				platform=columns[platform_index]
-					
-				
+		i=1
+		for line in lines:
+			columns = line.strip().split("\t")
+			if len(columns) <10:
+				print "ERROR: line number %s of the file has less number of column than the minimum accepted column (10).\nIt is possible that your file has missed tabs"%str(i)
+				sys.exit(0)
 
-				antibio=antibiogram(biosample_id,species,antibiotic_name,ast_standard,breakpoint_version,
-									laboratory_typing_method,measurement,measurement_units,measurement_sign,
-									resistance_phenotype,platform,i)
+			if i>1:
+				if len(columns)!=header_len:
+					print "ERROR: Line number:%s has wrong number of column. It has %s columns while your header has %s columns."%(i,len(columns),header_len)
+					print "The wrong line has these columns:%s"%columns
 
-				if self.args.mode == "submit": 
-					if antibio.has_error:
-						self.error_detect += 1 # could put bad antibio in separate list to 'antibiograms'
-					else:
-                                                file_name = biosample_id + self.month
-                                                self.files_created.add(file_name)
-						with open(file_name + ".txt", "a") as singsamp:
-							if biosample_id not in biosample_id_set:
-								singsamp.write(header_line)
-							singsamp.write(line)
-						biosample_id_set.add(biosample_id)
-				antibiograms.append(antibio)
-		i += 1
- 
-        self.header_line=header_line
-	return antibiograms
+				else:
+					biosample_id=columns[biosample_id_index]
+	#				biosample_id_set.add(biosample_id)
+					species=columns[species_index]
+					species_set.add(species)
+					antibiotic_name=columns[antibiotic_name_index]
+					ast_standard=columns[ast_standard_index]
+					breakpoint_version=columns[breakpoint_version_index]
+					laboratory_typing_method=columns[laboratory_typing_method_index]
+					measurement=columns[measurement_index]
+					measurement_units=columns[measurement_units_index]
+					measurement_sign=columns[measurement_sign_index]
+					resistance_phenotype=columns[resistance_phenotype_index]
+					platform=columns[platform_index]
+					antibio=antibiogram(biosample_id,species,antibiotic_name,ast_standard,breakpoint_version,
+										laboratory_typing_method,measurement,measurement_units,measurement_sign,
+										resistance_phenotype,platform,i)
+					if self.args.mode == "submit":
+						if antibio.has_error:
+							self.error_detect += 1 # could put bad antibio in separate list to 'antibiograms'
+						else:
+							file_name = biosample_id + self.month
+							self.files_created.add(file_name)
+
+							with open(file_name + ".txt", "a") as singsamp:
+								if biosample_id not in biosample_id_set:
+									singsamp.write(header_line)
+								singsamp.write(line)
+							biosample_id_set.add(biosample_id)
+					antibiograms.append(antibio)
+			i += 1
+
+			self.header_line=header_line
+		return antibiograms
 
 
