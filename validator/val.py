@@ -1,11 +1,13 @@
 import os
 import datetime
+from time import gmtime, strftime
 from amr import antibiogram
 
 
 class val:
 
-    month = datetime.date.today().strftime('_%b-%Y')
+    #month = datetime.date.today().strftime('_%b-%Y')
+    month = strftime("_%a-%d-%b_%Y-%H-%M-%S", gmtime())
     error_detect = 0
     files_created=set()
 
